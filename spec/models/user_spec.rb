@@ -11,8 +11,7 @@ RSpec.describe User, type: :model do
   end
 
   describe "associations" do
-    it { should belong_to(:host).class_name('User') }
     it { should have_many(:users_viewing_parties) }
-    it { should have_many(:users).through(:users_viewing_parties) }
+    it { should have_many(:viewing_parties).through(:users_viewing_parties) }
   end
 end
