@@ -4,6 +4,11 @@ class MovieGateway
     JSON.parse(response.body, symbolize_names: true)[:results]
   end
 
+  def self.get_searched_movies(search)
+    response = connection.get("/3/search/movie", {query: search})
+    JSON.parse(response.body, symbolize_names: true)[:results]
+  end
+
   private 
 
   def self.connection 
