@@ -14,4 +14,16 @@ RSpec.describe User, type: :model do
     it { should have_many(:users_viewing_parties) }
     it { should have_many(:viewing_parties).through(:users_viewing_parties) }
   end
+
+  describe "#find_user_id" do
+    it "can find users whose IDs match those in the invitees array" do
+      user2 = User.create!(name: "Dolly Parton", username: "dollyP", password: "Jolene123")
+      user3 = User.create!(name: "Lionel Messi", username: "futbol_geek", password: "test123")
+
+      invitees = [user2[:id], user3[:id]]
+      result = User.find_user_id(invitees)
+
+      expect(result).to eq([user2, user3])
+    end
+  end
 end
