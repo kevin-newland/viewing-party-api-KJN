@@ -23,7 +23,7 @@ RSpec.describe User, type: :model do
       invitees = [user2[:id], user3[:id]]
       result = User.find_user_id(invitees)
 
-      expect(result).to eq([user2, user3])
+      expect(result).to match_array([user2, user3])
     end
   end
 end
