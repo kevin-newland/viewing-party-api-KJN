@@ -1,6 +1,5 @@
 # Viewing Party API - Solo Project
 
-This is the base repo for the Viewing Party Solo Project for Module 3 in Turing's Software Engineering Program. 
 
 ## About this Application
 
